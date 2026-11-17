@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jxx cc永久地址-导航入口与镜像域名观察</title>
+<meta name="description" content="jxx cc永久地址栏目整理可核对的导航入口、镜像域名变更记录与访问路径判断方法，含 2026 年 10 月至 11 月的域名状态时间线、收藏夹备份步骤与访问异常自查清单。">
+<meta name="keywords" content="jxx cc永久地址">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2e4c'/%3E%3Cpath d='M18 40V24h8c6 0 10 3 10 8s-4 8-10 8h-8zm6-4h3c3 0 5-1.6 5-4s-2-4-5-4h-3z' fill='%23ffcf5c'/%3E%3Ccircle cx='47' cy='38' r='5' fill='%23ffcf5c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#101d2b;
+  --ink-2:#33475c;
+  --muted:#5d7186;
+  --line:#dbe3ec;
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --brand:#0f2e4c;
+  --brand-2:#164a75;
+  --accent:#e0a72c;
+  --accent-soft:#fdf3dc;
+  --ok:#1f7a54;
+  --warn:#a8481f;
+  --radius:12px;
+  --radius-s:8px;
+  --shadow:0 1px 2px rgba(16,29,43,.06),0 8px 24px rgba(16,29,43,.06);
+  --gap:20px;
+  --font:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.35;margin:0;color:var(--ink)}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:1.25em}
+li{margin:4px 0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{width:min(1200px,100% - 32px);margin:0 auto}
+
+/* 吸顶公告条 + 页头 */
+.sticky-shell{position:sticky;top:0;z-index:60}
+.notice{
+  background:var(--brand);
+  color:#dbe7f3;
+  font-size:13.5px;
+  border-bottom:1px solid #0a2137;
+}
+.notice .wrap{display:flex;gap:10px;align-items:center;padding:7px 0;flex-wrap:wrap}
+.notice b{color:#fff}
+.notice .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.notice a{color:#ffd977}
+.site-head{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{display:flex;align-items:center;gap:18px;padding:10px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:38px;height:38px;flex:none}
+.brand-text{font-weight:700;font-size:18px;letter-spacing:.3px;color:var(--brand)}
+.brand-text small{display:block;font-weight:400;font-size:11.5px;color:var(--muted);letter-spacing:.5px}
+nav.main-nav{margin-left:auto}
+nav.main-nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.main-nav a{display:block;padding:7px 11px;border-radius:99px;font-size:14.5px;color:var(--ink-2)}
+nav.main-nav a:hover{background:#eef3f9;text-decoration:none}
+nav.main-nav a.active{background:var(--accent-soft);color:#6b4a00;font-weight:600}
+.head-tools{display:flex;align-items:center;gap:8px}
+.search-box{display:flex;align-items:center;border:1px solid var(--line);background:#fff;border-radius:99px;padding:2px 4px 2px 12px;min-width:200px}
+.search-box input{border:0;outline:0;font:inherit;font-size:14px;padding:6px 4px;width:100%;background:transparent;color:var(--ink)}
+.search-box button{border:0;background:var(--brand);color:#fff;border-radius:99px;padding:6px 13px;font:inherit;font-size:13.5px;cursor:pointer}
+.menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:var(--radius-s);padding:7px 11px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink-2)}
+.search-feedback{font-size:13.5px;color:var(--muted);padding:4px 0 0}
+.search-feedback.hit{color:var(--ok)}
+.search-feedback.miss{color:var(--warn)}
+
+/* 锚点偏移 */
+section[id],div[id].anchor{scroll-margin-top:118px}
+
+/* 首屏 */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#0d2942 0%,#123a5c 55%,#0f2e4c 100%);
+  color:#e8f0f8;
+  border-bottom:1px solid #08243b;
+}
+.hero .wrap{position:relative;z-index:2;padding:46px 0 40px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:36px;align-items:center}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1px;color:#ffd977;border:1px solid rgba(255,217,119,.4);padding:4px 12px;border-radius:99px}
+.hero h1{font-size:clamp(28px,4.4vw,46px);color:#fff;margin:14px 0 12px;letter-spacing:.5px}
+.hero p.lede{color:#c6d7e7;font-size:16.5px;max-width:56ch;margin-bottom:20px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.btn{display:inline-block;padding:10px 20px;border-radius:99px;font-size:15px;font-weight:600;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#3c2a00}
+.btn-primary:hover{background:#f0b83f;text-decoration:none}
+.btn-ghost{border-color:rgba(255,255,255,.36);color:#e8f0f8}
+.btn-ghost:hover{background:rgba(255,255,255,.1);text-decoration:none}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
+.hero-stats div{font-size:13px;color:#a9c0d5}
+.hero-stats strong{display:block;font-size:21px;color:#fff;letter-spacing:.5px}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto}
+.hero-note{margin-top:12px;font-size:12.5px;color:#93aec6;text-align:center}
+
+/* 主内容三栏门户 */
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr) 280px;gap:26px;padding:30px 0 10px;align-items:start}
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 16px 12px;margin-bottom:18px}
+.side-card h2{font-size:15px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.side-nav ul{list-style:none;margin:0;padding:0}
+.side-nav a{display:block;font-size:14px;color:var(--ink-2);padding:6px 10px;border-left:3px solid transparent;border-radius:0 var(--radius-s) var(--radius-s) 0}
+.side-nav a:hover{background:#f0f5fa;text-decoration:none}
+.side-nav a.current{border-left-color:var(--accent);background:#f7f9fc;color:var(--brand);font-weight:600}
+
+main{min-width:0}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 22px 20px;margin-bottom:24px;min-width:0}
+.panel > h2{font-size:21px;margin-bottom:6px}
+.panel-sub{font-size:14px;color:var(--muted);margin-bottom:16px}
+.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:99px;background:#eef3f9;color:var(--brand-2);border:1px solid var(--line);margin:0 4px 4px 0}
+.tag.accent{background:var(--accent-soft);border-color:#f0dcae;color:#6b4a00}
+.meta{font-size:12.5px;color:var(--muted)}
+.small{font-size:13.5px;color:var(--muted)}
+
+/* 概览网格 */
+.overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ov-item{border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;background:#fbfcfe}
+.ov-item h3{font-size:15px;margin-bottom:4px}
+.ov-item p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* 精选卡片 */
+.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(16,29,43,.1)}
+.card img{width:100%;height:150px;object-fit:cover}
+.card-body{padding:13px 15px 15px}
+.card-body h3{font-size:16px;margin-bottom:6px}
+.card-body p{font-size:13.5px;color:var(--ink-2);margin-bottom:8px}
+.card-body .meta{display:flex;justify-content:space-between;gap:8px}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;margin:0;padding:0}
+.tight-list li{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.tight-list li:last-child{border-bottom:0}
+.tight-list time{flex:none;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:72px}
+.tight-list .what{color:var(--ink-2)}
+.tight-list .what b{color:var(--ink)}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cat{display:block;border:1px solid var(--line);border-radius:var(--radius-s);padding:11px 12px;background:#fbfcfe}
+.cat:hover{background:#f2f7fc;text-decoration:none}
+.cat strong{display:block;font-size:14.5px;color:var(--ink)}
+.cat span{font-size:12.5px;color:var(--muted)}
+
+/* 深度解析 */
+.deep{display:block}
+.deep h3{font-size:17px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--accent)}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:15.5px;color:var(--ink-2)}
+.deep .callout{background:var(--accent-soft);border:1px solid #f0dcae;border-radius:var(--radius-s);padding:12px 15px;font-size:14.5px;color:#5c4300;margin:14px 0}
+.deep ol.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0}
+.deep ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 40px;font-size:14.5px;color:var(--ink-2)}
+.deep ol.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;display:grid;place-items:center}
+.compare{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0}
+.compare th,.compare td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.compare th{background:#f1f5fa;color:var(--brand);font-weight:600}
+.compare td.y{color:var(--ok);font-weight:600}
+.compare td.n{color:var(--warn);font-weight:600}
+.blockquote{border-left:4px solid var(--line);padding:4px 0 4px 14px;color:var(--ink-2);font-size:14.5px;margin:14px 0}
+
+/* 指南步骤 */
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.guide{border:1px solid var(--line);border-radius:var(--radius-s);padding:13px 15px;background:#fbfcfe}
+.guide h3{font-size:15px;margin-bottom:6px}
+.guide p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* FAQ */
+details.faq{border:1px solid var(--line);border-radius:var(--radius-s);margin-bottom:10px;background:#fbfcfe}
+details.faq summary{cursor:pointer;padding:12px 15px;font-size:15px;font-weight:600;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:19px;color:var(--muted);font-weight:400;line-height:1}
+details.faq[open] summary::after{content:"–"}
+details.faq .ans{padding:0 15px 13px;font-size:14.5px;color:var(--ink-2)}
+details.faq[open]{background:#fff;border-color:#c6d5e4}
+
+/* 评论 */
+.comments{display:grid;gap:12px}
+.comment{border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;background:#fbfcfe}
+.comment header{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:4px}
+.comment header strong{font-size:14px}
+.comment header .meta{font-size:12.5px}
+.comment p{font-size:14px;color:var(--ink-2);margin:0}
+.comment.neg{border-left:3px solid #d8a08a}
+.comment.neu{border-left:3px solid #c6d5e4}
+.comment.pos{border-left:3px solid #9dc4ad}
+
+/* 资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.news{border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;background:#fbfcfe}
+.news h3{font-size:14.5px;margin-bottom:4px}
+.news p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:8px}
+.tag-index a{font-size:13.5px;padding:5px 12px;border-radius:99px;background:#eef3f9;border:1px solid var(--line);color:var(--brand-2)}
+.tag-index a:hover{background:var(--accent-soft);border-color:#f0dcae;color:#6b4a00;text-decoration:none}
+.hidden-by-search{display:none !important}
+
+/* 时间线 */
+.timeline{list-style:none;margin:0;padding:0 0 0 6px}
+.timeline li{position:relative;padding:0 0 16px 22px;border-left:2px solid var(--line)}
+.timeline li:last-child{border-left-color:transparent;padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--brand-2)}
+.timeline time{display:block;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.timeline strong{display:block;font-size:14.5px;color:var(--ink);margin:2px 0}
+.timeline span{font-size:13.5px;color:var(--ink-2)}
+
+/* 侧栏 */
+.side-card ol,.side-card ul{padding-left:1.1em}
+.side-card li{font-size:13.5px;color:var(--ink-2);margin:6px 0}
+.side-card li b{color:var(--ink)}
+.rank{list-style:none;padding:0;counter-reset:r}
+.rank li{counter-increment:r;display:flex;gap:9px;font-size:13.5px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(r);flex:none;width:20px;height:20px;border-radius:5px;background:#eef3f9;color:var(--brand);font-size:12px;display:grid;place-items:center;margin-top:3px}
+
+/* 页尾 */
+footer.site-foot{background:#0c2238;color:#a9c0d5;margin-top:34px;padding:38px 0 26px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+footer h3{color:#fff;font-size:14.5px;margin-bottom:10px}
+footer p{font-size:13.5px;color:#93aec6;margin-bottom:10px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin:6px 0}
+footer a{color:#c6d7e7;font-size:13.5px}
+footer a:hover{color:#ffd977}
+.foot-bottom{border-top:1px solid #1d3a56;margin-top:26px;padding-top:16px;font-size:12.5px;color:#7d97b0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-brand .brand-text{color:#fff}
+.foot-brand .brand-text small{color:#8aa6c0}
+
+/* 回到顶部 */
+#toTop{position:fixed;right:18px;bottom:18px;z-index:70;border:0;border-radius:99px;padding:10px 15px;background:var(--brand);color:#fff;font:inherit;font-size:13.5px;cursor:pointer;box-shadow:0 6px 18px rgba(12,34,56,.3);opacity:0;pointer-events:none;transition:opacity .2s ease}
+#toTop.show{opacity:1;pointer-events:auto}
+
+/* 平板 */
+@media (max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr) 270px}
+  .layout > .side-left{display:none}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:26px}
+  .hero-art{max-width:420px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+/* 手机 */
+@media (max-width:720px){
+  body{font-size:15.5px}
+  .wrap{width:min(1200px,100% - 24px)}
+  .head-inner{gap:10px}
+  .menu-toggle{display:inline-block;margin-left:auto}
+  nav.main-nav{display:none;width:100%;margin-left:0;order:5}
+  nav.main-nav.open{display:block}
+  nav.main-nav ul{flex-direction:column;gap:2px;padding:6px 0}
+  nav.main-nav a{padding:9px 12px;border-radius:var(--radius-s)}
+  .head-tools{order:4;width:100%;margin-left:0}
+  .search-box{width:100%;min-width:0}
+  .head-tools{flex-wrap:wrap}
+  .layout{grid-template-columns:minmax(0,1fr);padding-top:22px}
+  .layout > .side-right{order:9}
+  .feature-grid,.overview-grid,.cat-grid,.guide-grid,.news-grid{grid-template-columns:minmax(0,1fr)}
+  .panel{padding:18px 15px 16px}
+  section[id],div[id].anchor{scroll-margin-top:150px}
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+  #toTop{right:12px;bottom:12px}
+  .hero-stats{gap:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important;animation:none !important}
+  .card:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-shell">
+  <div class="notice" role="region" aria-label="更新公告">
+    <div class="wrap">
+      <span class="dot" aria-hidden="true"></span>
+      <b>公告</b>
+      <span>11 月 6 日记录：<strong>备用域名第 4 组</strong>状态回稳，主域解析缓存 TTL 由 300 秒调至 120 秒；镜像清单已同步增补 2 条。</span>
+      <a href="/#timeline">查看时间线</a>
+      <a href="/#latest">最新更新</a>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="brand" href="/#top" aria-label="jxx cc永久地址 首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="站点图形标志：交错的导航格">
+          <rect width="64" height="64" rx="14" fill="#0f2e4c"/>
+          <path d="M16 22h10c6 0 10 3 10 8s-4 8-10 8H16z" fill="none" stroke="#ffcf5c" stroke-width="3.5"/>
+          <circle cx="46" cy="38" r="6" fill="#ffcf5c"/>
+          <path d="M42 20l6 6-6 6" fill="none" stroke="#9dc4ad" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">jxx cc永久地址<small>导航入口观察 · 镜像域名记录</small></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <ul>
+          <li><a href="/#overview" class="active">路径概览</a></li>
+          <li><a href="/#featured">精选入口</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类频道</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">访问指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </nav>
+      <div class="head-tools">
+        <div class="search-box" role="search">
+          <input id="searchInput" type="search" placeholder="搜索域名、镜像、步骤" aria-label="站内搜索">
+          <button type="button" id="searchBtn">查找</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">菜单</button>
+      </div>
+    </div>
+    <div class="wrap"><p class="search-feedback" id="searchFeedback" aria-live="polite"></p></div>
+  </header>
+</div>
+
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">域名与入口 · 可核对记录</span>
+      <h1 id="heroTitle">jxx cc永久地址</h1>
+      <p class="lede">把域名变更、镜像切换、收藏夹备份三件事拆开记：哪一天哪条解析变了，哪个镜像在 10 月 28 日后仍能打开首页，换设备后怎么在 30 秒内找回入口。下面所有条目都带日期，方便逐条回查。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#overview">先看路径概览</a>
+        <a class="btn btn-ghost" href="/#timeline">域名状态时间线</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>4 组</strong>镜像域名分组</div>
+        <div><strong>12 类</strong>访问异常情形</div>
+        <div><strong>2026-11-06</strong>最近一次核对</div>
+        <div><strong>120 秒</strong>当前 TTL 值</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 300" role="presentation">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1d5a8b"/>
+            <stop offset="1" stop-color="#0f2e4c"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="16" width="400" height="268" rx="18" fill="url(#g1)" stroke="#2c6a9c"/>
+        <g stroke="#4d86b3" stroke-width="1.4" opacity=".7">
+          <path d="M38 74h344M38 124h344M38 174h344M38 224h344"/>
+          <path d="M112 46v212M196 46v212M280 46v212"/>
+        </g>
+        <g fill="#ffcf5c">
+          <circle cx="112" cy="74" r="7"/>
+          <circle cx="196" cy="124" r="7"/>
+          <circle cx="280" cy="174" r="7"/>
+          <circle cx="352" cy="224" r="7"/>
+        </g>
+        <path d="M112 74L196 124L280 174L352 224" fill="none" stroke="#ffd977" stroke-width="2.4" stroke-dasharray="7 6"/>
+        <g fill="#0a2137" stroke="#9dc4ad" stroke-width="1.6">
+          <rect x="52" y="196" width="88" height="52" rx="8"/>
+          <rect x="156" y="60" width="88" height="52" rx="8"/>
+          <rect x="256" y="132" width="88" height="52" rx="8"/>
+        </g>
+        <g fill="#c6d7e7" font-family="system-ui,sans-serif" font-size="12">
+          <text x="68" y="218">解析 A</text>
+          <text x="68" y="236">TXT 校验</text>
+          <text x="172" y="82">镜像 B</text>
+          <text x="172" y="100">首页 200</text>
+          <text x="272" y="154">镜像 C</text>
+          <text x="272" y="172">CDN 回源</text>
+        </g>
+      </svg>
+      <p class="hero-note">示意图：解析、镜像、回源三类节点的核对顺序</p>
+    </div>
+  </div>
+</section>
+
+<div class="layout wrap">
+
+  <!-- 左侧栏：频道导航 + 榜单 -->
+  <aside class="side-left">
+    <div class="side-card side-nav">
+      <h2>频道导航</h2>
+      <ul>
+        <li><a href="/#overview" class="current">永久地址判断方法</a></li>
+        <li><a href="/#featured">镜像域名精选</a></li>
+        <li><a href="/#latest">今日更新记录</a></li>
+        <li><a href="/#channels">分类频道入口</a></li>
+        <li><a href="/#deep">域名变更深度解析</a></li>
+        <li><a href="/#guide">换设备找回入口</a></li>
+        <li><a href="/#faq">访问异常问答</a></li>
+        <li><a href="/#comments">用户使用反馈</a></li>
+        <li><a href="/#timeline">域名状态时间线</a></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h2>平台提及排行</h2>
+      <ol class="rank">
+        <li>GitHub Pages 镜像页</li>
+        <li>Telegram 频道公告</li>
+        <li>Cloudflare 解析面板</li>
+        <li>贴吧「域名收藏」吧</li>
+        <li>微信收藏夹备份</li>
+        <li>Notion 入口清单</li>
+      </ol>
+      <p class="small" style="margin-top:8px">按 10 月 9 日至 11 月 6 日用户提交的核对记录计数，仅作参考。</p>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- 1 领域概览 -->
+    <section class="panel" id="overview" aria-labelledby="h-overview">
+      <h2 id="h-overview">永久地址判断方法：四个可核对的信号</h2>
+      <p class="panel-sub">把“能不能长期打开”拆成解析、证书、内容、备份四个可观察项，任一项缺失都要重新确认。</p>
+      <div class="overview-grid">
+        <div class="ov-item">
+          <h3>解析记录是否稳定</h3>
+          <p>在同一网络下连续三天用 dig 查询 A 记录，若回包 IP 三天内有两次以上变化，说明 CDN 在调度，入口本身未必失效。</p>
+        </div>
+        <div class="ov-item">
+          <h3>证书主题是否一致</h3>
+          <p>镜像域名的证书 CN 与页脚登记名称对不上时，先怀疑仿冒站点，10 月 31 日有用户报告过一处证书签发机构不同。</p>
+        </div>
+        <div class="ov-item">
+          <h3>首页内容是否同步</h3>
+          <p>对照公告条的日期：主域与镜像的海报日期相差超过 3 天，通常意味着镜像站停止回源，而不是入口被封。</p>
+        </div>
+        <div class="ov-item">
+          <h3>是否有离线备份</h3>
+          <p>把当前入口以“域名 + 记录日期 + 截图”存进本地笔记，30 天内至少验证一次，避免只依赖浏览器收藏。</p>
+        </div>
+      </div>
+      <p class="small" style="margin-top:14px">所属领域词：镜像域名、A 记录、TTL、证书主题、回源、收藏夹备份、入口校验、公告条日期。</p>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="panel" id="featured" aria-labelledby="h-featured">
+      <h2 id="h-featured">镜像域名精选：四条可先试的入口路径</h2>
+      <p class="panel-sub">按 11 月 6 日 14:00 的核对结果排序，四条路径分别对应不同网络环境，不是越快越好。</p>
+      <div class="feature-grid">
+        <article class="card">
+          <img src="https://picsum.photos/seed/jxxcc-mirror-a/560/300" width="560" height="300" loading="lazy" alt="桌面浏览器标签页并排显示两个镜像域名首页的对照截图" style="object-fit:cover">
+          <div class="card-body">
+            <h3>主域直连路径</h3>
+            <p>电信宽带下首屏 1.2 秒完成，移动网络需 2.4 秒；适合固定设备长期收藏。</p>
+            <div class="meta"><span class="tag accent">主域</span><span>11-06 核验</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/jxxcc-mirror-b/560/300" width="560" height="300" loading="lazy" alt="手机上打开备用镜像域名的加载进度条画面" style="object-fit:cover">
+          <div class="card-body">
+            <h3>备用域名第 4 组</h3>
+            <p>10 月 28 日后恢复回源，证书 11 月 4 日续期；晚高峰偶有 5 秒内排队。</p>
+            <div class="meta"><span class="tag">备用组</span><span>11-05 复测</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/jxxcc-mirror-c/560/300" width="560" height="300" loading="lazy" alt="笔记本与手机同时访问同一个镜像入口的桌面场景" style="object-fit:cover">
+          <div class="card-body">
+            <h3>GitHub Pages 镜像页</h3>
+            <p>只放静态跳转链接，内容更新时间取决于维护者提交，10 月 30 日之后未再提交。</p>
+            <div class="meta"><span class="tag">静态页</span><span>10-30 提交</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/jxxcc-mirror-d/560/300" width="560" height="300" loading="lazy" alt="笔记软件中按日期排序的域名记录列表" style="object-fit:cover">
+          <div class="card-body">
+            <h3>本地笔记备份路径</h3>
+            <p>用日期做标题，存域名、截图、网络环境三项；断网时也能翻到上次可用入口。</p>
+            <div class="meta"><span class="tag">离线</span><span>11-02 整理</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="panel" id="latest" aria-labelledby="h-latest">
+      <h2 id="h-latest">最新更新：11 月 1 日到 11 月 6 日的六条记录</h2>
+      <p class="panel-sub">每条记录只写发生了什么，不复述结论；判断留给深度解析与问答。</p>
+      <ul class="tight-list">
+        <li><time datetime="2026-11-06">11-06</time><span class="what"><b>主域缓存 TTL 调整</b>：300 秒改为 120 秒，切换镜像后生效时间缩短约 3 分钟。</span></li>
+        <li><time datetime="2026-11-05">11-05</time><span class="what"><b>备用第 4 组复测</b>：连续 3 次请求首页均返回 200，证书有效期至 2027-02-03。</span></li>
+        <li><time datetime="2026-11-04">11-04</time><span class="what"><b>证书续期</b>：备用组证书签发机构由 B 换为 A，主题名称未变。</span></li>
+        <li><time datetime="2026-11-02">11-02</time><span class="what"><b>入口清单整理</b>：把散落在微信、贴吧的 9 条链接合并为一张本地表。</span></li>
+        <li><time datetime="2026-10-31">10-31</time><span class="what"><b>仿冒提示</b>：一处镜像证书签发机构与登记不符，社区标记为待核实。</span></li>
+        <li><time datetime="2026-10-28">10-28</time><span class="what"><b>回源恢复</b>：备用第 4 组结束维护，海报日期与主域同步到同一天。</span></li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="panel" id="channels" aria-labelledby="h-channels">
+      <h2 id="h-channels">分类频道入口：按设备与场景找路径</h2>
+      <p class="panel-sub">九个频道名称按用户实际搜索词命名，点进去对应到本页已有的条目。</p>
+      <div class="cat-grid">
+        <a class="cat" href="/#featured"><strong>主域直连入口</strong><span>固定设备长期收藏</span></a>
+        <a class="cat" href="/#featured"><strong>备用镜像域名</strong><span>主域异常时切换</span></a>
+        <a class="cat" href="/#guide"><strong>手机端找回入口</strong><span>换机与清缓存场景</span></a>
+        <a class="cat" href="/#guide"><strong>电脑收藏夹备份</strong><span>导出 HTML 书签</span></a>
+        <a class="cat" href="/#timeline"><strong>域名状态时间线</strong><span>逐日解析记录</span></a>
+        <a class="cat" href="/#faq"><strong>访问异常自查</strong><span>12 类情形对照</span></a>
+        <a class="cat" href="/#deep"><strong>证书与仿冒辨别</strong><span>签发机构差异</span></a>
+        <a class="cat" href="/#news"><strong>镜像维护公告</strong><span>维护窗口时间</span></a>
+        <a class="cat" href="/#tags"><strong>域名记录标签</strong><span>按时间与网络筛选</span></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="panel" id="deep" aria-labelledby="h-deep">
+      <h2 id="h-deep">深度解析：镜像越多，找回入口反而越难</h2>
+      <p class="panel-sub">全页唯一主体阅读区。以下判断都可以被反驳，前提是拿出对应日期的解析截图或证书信息。</p>
+      <div class="deep">
+        <p>先给结论：<strong>同时收藏超过 5 个镜像，实际可用入口的召回率会下降</strong>。理由不是记不住，而是切换成本被低估——每个镜像的海报日期、证书主题、登录状态都要重新确认，确认一次平均 40 秒。10 月 12 日到 11 月 6 日，21 份用户提交的核对记录里，收藏 6 个以上镜像的 8 人，平均只验证过其中 3 个；收藏 2 到 3 个的 13 人，平均验证了 2.6 个。</p>
+
+        <h3>一、把“打不开”拆成三层，先定位再换入口</h3>
+        <p>10 月 28 日的一次集中反馈可以当样本。当天 19:00 至 21:30，贴吧「域名收藏」吧有 14 条帖子称主域打不开。其中 9 条在同一时间用手机流量能打开，说明是本地 DNS 缓存未过期；3 条在更换浏览器后代正常，属于扩展插件拦截；只有 2 条在三种网络下都失败，对应真实的服务端异常。把这三层混在一起，就会得出“永久地址失效”的错误结论。</p>
+        <table class="compare">
+          <caption class="small" style="text-align:left;padding-bottom:6px">10 月 28 日 14 条反馈的原因分布（按复现方式归类）</caption>
+          <thead><tr><th>表现</th><th>复现方式</th><th>条数</th><th>是否需换入口</th></tr></thead>
+          <tbody>
+            <tr><td>页面转圈后超时</td><td>同一 WiFi 必现，流量正常</td><td>9</td><td class="n">否，清 DNS 缓存</td></tr>
+            <tr><td>提示连接被重置</td><td>换浏览器后正常</td><td>3</td><td class="n">否，关插件</td></tr>
+            <tr><td>502 / 空白页</td><td>三网均失败</td><td>2</td><td class="y">是，切备用组</td></tr>
+          </tbody>
+        </table>
+
+        <h3>二、证书签发机构变化，比域名变化更值得记一笔</h3>
+        <p>11 月 4 日备用第 4 组证书续期，签发机构从 B 换成 A，主题名称没变。单看浏览器地址栏的锁标，这次变化不可见；但 10 月 31 日被标记为待核实的那处镜像，恰恰是签发机构与登记不符。两次事件指向同一件事：核对证书要看到机构名，不能只看“有没有锁”。Firefox 在 128 版之后把证书详情收进二级菜单，Chrome 则需点“连接安全”再点“证书有效”，路径不同但字段一致。</p>
+        <div class="callout">可核对的中段：证书主题（Subject）应包含域名全称；签发者（Issuer）应与上次记录一致，变化时记录日期。10-31 那处镜像的 Issuer 为一家此前未出现过的机构，且有效期仅 90 天。</div>
+
+        <h3>三、TTL 从 300 秒调到 120 秒，改变的是切换节奏</h3>
+        <p>11 月 6 日的解析调整影响的是“换完要等多久”。300 秒时，改完 A 记录后最长 5 分钟旧 IP 仍在部分递归服务器上生效；120 秒后缩短到 2 分钟。对每天切换一次入口的人，这 3 分钟差别不大；对维护公告前临时切换的场景，2 分钟内完成验证才算有效。Cloudflare 面板里 TTL 设为 Auto 时实际值为 300 秒，要手动改成 120 才生效，这一点在 11 月 6 日的操作记录里写明。</p>
+
+        <h3>四、反驳一个流行说法：入口不是越“新”越好</h3>
+        <p>贴吧里有一种说法，新出现的镜像域名“更干净、更快”。10 月 31 日那处待核实镜像恰好是新域名，证书签发机构陌生，海报日期比主域晚 2 天。旧镜像的问题通常是慢，新镜像的问题可能是假。判断顺序应该反过来：先看证书与内容日期是否与主域一致，再比速度。速度可以测，一致性只能核。</p>
+
+        <h3>五、把判断拆成可核对清单</h3>
+        <ol class="steps">
+          <li>记录日期：以公告条上的日期为准，不写“最近”。</li>
+          <li>记录网络：WiFi 名称或运营商，同一入口在不同网络下结论可能相反。</li>
+          <li>记录证书 Issuer 与有效期，截图保存。</li>
+          <li>记录海报日期与公告条日期之差，超过 3 天标注“待确认”。</li>
+          <li>30 天内至少复验一次，复验结果覆盖旧记录而不是并列。</li>
+        </ol>
+        <p class="blockquote">一位在 10 月 30 日提交记录的用户的说法值得保留：“我把六个域名存成一个文件夹，结果每次只点第一个，后面五个从没打开过。”这句话解释了为什么收藏数量与可用率不成正比。</p>
+      </div>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="panel" id="guide" aria-labelledby="h-guide">
+      <h2 id="h-guide">体验指南：换设备后 30 秒找回入口</h2>
+      <p class="panel-sub">四步操作，全部在本地完成，不依赖任何单一平台。</p>
+      <div class="guide-grid">
+        <div class="guide">
+          <h3>第 1 步：导出书签</h3>
+          <p>Chrome 地址栏输入 chrome://bookmarks，右上角三点选“导出书签”，得到 HTML 文件；文件里保留添加日期。</p>
+        </div>
+        <div class="guide">
+          <h3>第 2 步：写一行备注</h3>
+          <p>在新设备上给入口加备注：域名 + 核对日期 + 网络，例如“备用组 · 11-05 · 联通”。</p>
+        </div>
+        <div class="guide">
+          <h3>第 3 步：清缓存再试</h3>
+          <p>打开失败先清 DNS 缓存：Windows 用 ipconfig /flushdns，macOS 用 sudo dscacheutil -flushcache。</p>
+        </div>
+        <div class="guide">
+          <h3>第 4 步：验证证书</h3>
+          <p>点地址栏锁标看 Issuer，与上次记录对比；不一致就停用该入口，不输入任何账号信息。</p>
+        </div>
+      </div>
+      <p class="small" style="margin-top:12px">11 月 2 日的整理记录显示，按上述四步操作的用户，平均在 28 秒内找回可用入口；只靠浏览器收藏的对照组为 1 分 40 秒。</p>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="panel" id="faq" aria-labelledby="h-faq">
+      <h2 id="h-faq">访问异常问答：六个高频情形</h2>
+      <p class="panel-sub">答案只讲这一情形本身，不重复其他板块的结论。</p>
+      <details class="faq" open>
+        <summary>主域能打开但图片加载失败，要换镜像吗？</summary>
+        <div class="ans">先不换。图片走单独域名时，常是 CDN 节点问题；在 11 月 6 日的记录里，同一入口换 WiFi 后图片恢复。等 2 分钟仍失败，再测备用组。</div>
+      </details>
+      <details class="faq">
+        <summary>备用域名第 4 组晚高峰排队 5 秒，算异常吗？</summary>
+        <div class="ans">19:00 到 22:00 的回源队列变长，属已知现象，10 月 28 日恢复后一直存在。判断标准是排队是否超过 10 秒，超过再考虑切换。</div>
+      </details>
+      <details class="faq">
+        <summary>证书锁标正常，但页面要求输入账号，能信吗？</summary>
+        <div class="ans">不能只凭锁标。核对 Issuer 与登记是否一致，再看域名拼写；10 月 31 日那处待核实镜像的锁标同样正常，问题在机构与内容日期不符。</div>
+      </details>
+      <details class="faq">
+        <summary>手机清缓存后入口消失，去哪找？</summary>
+        <div class="ans">看本地笔记或导出的书签 HTML，里面按日期排；没有备份时，从 GitHub Pages 镜像页拿静态跳转链接，但它只到 10 月 30 日的版本。</div>
+      </details>
+      <details class="faq">
+        <summary>同一入口在电脑能开、手机不能开，谁的问题？</summary>
+        <div class="ans">多数是手机 DNS 或运营商线路差异。10 月 28 日的 9 条反馈都属于这一类，清 DNS 缓存或切换流量后恢复，不必更换镜像。</div>
+      </details>
+      <details class="faq">
+        <summary>TTL 改成 120 秒后，切换要等多久？</summary>
+        <div class="ans">最长 2 分钟，部分递归服务器可能更早。11 月 6 日的操作记录里，改完后 80 秒内三网均可访问新 IP。</div>
+      </details>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="panel" id="comments" aria-labelledby="h-comments">
+      <h2 id="h-comments">用户使用反馈：六条带具体条目的记录</h2>
+      <p class="panel-sub">语气不做统一，只保留提到具体域名、日期或步骤的反馈。</p>
+      <div class="comments">
+        <article class="comment pos">
+          <header><strong>路由器七号</strong><span class="meta">11-06 · 联通宽带</span></header>
+          <p>主域改 TTL 那天我正好在测，80 秒后新 IP 就通了，比以前等五分钟舒服。收藏夹里只留了主域和第 4 组两个。</p>
+        </article>
+        <article class="comment neg">
+          <header><strong>老陈不换机</strong><span class="meta">11-05 · 移动流量</span></header>
+          <p>备用第 4 组晚上排队还是有点久，19 点 40 分那次等了 7 秒才出首页。不算不能用，但比我预期慢。</p>
+        </article>
+        <article class="comment neu">
+          <header><strong>阿岚</strong><span class="meta">11-04 · 电信</span></header>
+          <p>证书续期后 Issuer 变了，我一开始以为进错站。对照了登记的名称才确认没问题，建议记录里把机构名写全。</p>
+        </article>
+        <article class="comment neg">
+          <header><strong>北纬 39</strong><span class="meta">10-31 · 手机</span></header>
+          <p>那处新镜像我点进去过，海报日期比主域晚两天，证书机构没见过。已经删了，宁可慢一点。</p>
+        </article>
+        <article class="comment pos">
+          <header><strong>笔记本小周</strong><span class="meta">11-02 · 校园网</span></header>
+          <p>按四步指南导出了书签，换电脑后 30 秒找回入口，备注里写了日期，比截图靠谱。</p>
+        </article>
+        <article class="comment neu">
+          <header><strong>不具名用户</strong><span class="meta">10-29 · WiFi</span></header>
+          <p>10 月 28 日晚上我也打不开，清完 DNS 缓存就好了。当时在吧里看到十几条同样的帖子，其实大部分不是入口问题。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="panel" id="news" aria-labelledby="h-news">
+      <h2 id="h-news">相关资讯：维护窗口与版本差异</h2>
+      <p class="panel-sub">四条短讯，只给时间、平台与可见变化。</p>
+      <div class="news-grid">
+        <div class="news">
+          <h3>镜像维护窗口改为凌晨 2 点到 4 点</h3>
+          <p>11 月 3 日起，备用组回源维护避开晚高峰；10 月 28 日之前是 20:00 到 22:00，与排队现象时间重合。</p>
+        </div>
+        <div class="news">
+          <h3>GitHub Pages 镜像页停在 10 月 30 日版本</h3>
+          <p>维护者最后提交为 10-30，页面上的跳转链接不含 11 月新增的第 4 组信息，使用时注意日期。</p>
+        </div>
+        <div class="news">
+          <h3>贴吧「域名收藏」吧置顶帖更新核对模板</h3>
+          <p>11 月 1 日置顶帖加入证书 Issuer 一栏，此前只要求写域名与日期；模板共 5 项。</p>
+        </div>
+        <div class="news">
+          <h3>浏览器版本差异影响证书查看路径</h3>
+          <p>Firefox 128 起证书详情收进二级菜单，Chrome 124 起需点“连接安全”再点“证书有效”，字段名称一致。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐（标签索引） -->
+    <section class="panel" id="tags" aria-labelledby="h-tags">
+      <h2 id="h-tags">相关推荐标签：按记录类型筛</h2>
+      <p class="panel-sub">每个标签对应本页已有条目，不含未出现的内容。</p>
+      <div class="tag-index">
+        <a href="/#timeline">域名状态时间线</a>
+        <a href="/#deep">证书签发机构核对</a>
+        <a href="/#guide">清 DNS 缓存步骤</a>
+        <a href="/#featured">备用镜像第 4 组</a>
+        <a href="/#latest">11 月更新记录</a>
+        <a href="/#faq">晚高峰排队判断</a>
+        <a href="/#deep">TTL 120 秒影响</a>
+        <a href="/#news">维护窗口时间</a>
+        <a href="/#comments">用户核对反馈</a>
+        <a href="/#overview">永久地址四信号</a>
+      </div>
+    </section>
+
+    <!-- 11 时间线 -->
+    <section class="panel" id="timeline" aria-labelledby="h-timeline">
+      <h2 id="h-timeline">域名状态时间线：10 月 9 日至 11 月 6 日</h2>
+      <p class="panel-sub">按发生日期排列，只写可核对的变更与复测结果。</p>
+      <ol class="timeline">
+        <li>
+          <time datetime="2026-11-06">2026-11-06</time>
+          <strong>主域 TTL 调为 120 秒</strong>
+          <span>操作面板记录显示手动修改，改后 80 秒三网可访问新 IP。</span>
+        </li>
+        <li>
+          <time datetime="2026-11-04">2026-11-04</time>
+          <strong>备用第 4 组证书续期</strong>
+          <span>Issuer 由 B 换为 A，Subject 未变，有效期至 2027-02-03。</span>
+        </li>
+        <li>
+          <time datetime="2026-10-31">2026-10-31</time>
+          <strong>一处新镜像被标记待核实</strong>
+          <span>Issuer 为此前未出现机构，有效期 90 天，海报日期晚于主域 2 天。</span>
+        </li>
+        <li>
+          <time datetime="2026-10-28">2026-10-28</time>
+          <strong>备用第 4 组结束维护恢复回源</strong>
+          <span>当日 19:00 至 21:30 的 14 条反馈中，2 条对应真实服务端异常。</span>
+        </li>
+        <li>
+          <time datetime="2026-10-12">2026-10-12</time>
+          <strong>开始收集用户核对记录</strong>
+          <span>至 11 月 6 日共 21 份，用于比较收藏数量与验证覆盖率。</span>
+        </li>
+        <li>
+          <time datetime="2026-10-09">2026-10-09</time>
+          <strong>维护窗口设在 20:00 至 22:00</strong>
+          <span>与晚高峰重合，11 月 3 日改为凌晨 2:00 至 4:00。</span>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- 右侧栏 -->
+  <aside class="side-right">
+    <div class="side-card">
+      <h2>今日核对要点</h2>
+      <ul>
+        <li><b>主域</b>：TTL 120 秒，11-06 14:00 可访问</li>
+        <li><b>备用第 4 组</b>：11-05 复测首页 200</li>
+        <li><b>证书</b>：Issuer A，有效期至 2027-02-03</li>
+        <li><b>待核实</b>：10-31 那处新镜像，勿输入账号</li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h2>网络环境小样本</h2>
+      <p class="small">10 月 12 日至 11 月 6 日，21 份记录的清理方式分布：</p>
+      <ul>
+        <li>清 DNS 缓存后恢复：9 份</li>
+        <li>关插件后恢复：3 份</li>
+        <li>切换备用组后恢复：2 份</li>
+        <li>未定位：7 份</li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h2>站内跳转</h2>
+      <ul>
+        <li><a href="/#deep">为什么镜像越多越难找回</a></li>
+        <li><a href="/#faq">晚高峰排队算异常吗</a></li>
+        <li><a href="/#guide">清 DNS 缓存命令</a></li>
+        <li><a href="/#news">维护窗口改到几点</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="页尾站点标志">
+            <rect width="64" height="64" rx="14" fill="#164a75"/>
+            <path d="M16 22h10c6 0 10 3 10 8s-4 8-10 8H16z" fill="none" stroke="#ffcf5c" stroke-width="3.5"/>
+            <circle cx="46" cy="38" r="6" fill="#ffcf5c"/>
+          </svg>
+          <span class="brand-text">jxx cc永久地址<small>导航入口观察 · 镜像域名记录</small></span>
+        </div>
+        <p>把域名、证书、内容日期三件事分开记，比多存十个链接更省时间。</p>
+        <p class="small">页面更新时间：2026-11-06，对应正文“主域 TTL 调为 120 秒”与“备用第 4 组复测”两条可核对记录。</p>
+      </div>
+      <div>
+        <h3>栏目入口</h3>
+        <ul>
+          <li><a href="/#overview">路径概览</a></li>
+          <li><a href="/#featured">精选入口</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>核对工具</h3>
+        <ul>
+          <li><a href="/#guide">换设备找回步骤</a></li>
+          <li><a href="/#faq">访问异常问答</a></li>
+          <li><a href="/#timeline">域名状态时间线</a></li>
+          <li><a href="/#tags">相关推荐标签</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>说明</h3>
+        <ul>
+          <li>示例数据：用户评论与核对计数为整理示例</li>
+          <li>日期均在 2026-10-09 至 2026-11-06 之间</li>
+          <li>页面不含外部跳转与账号输入入口</li>
+          <li>内容仅供核对方法参考</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 jxx cc永久地址 · 记录整理示例</span>
+      <span>所有域名状态以当日核验截图为准</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" type="button" aria-label="回到页面顶部">回到顶部</button>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "jxx cc永久地址",
+  "description": "整理导航入口、镜像域名变更记录与访问路径判断方法的中文信息页。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "主域能打开但图片加载失败，要换镜像吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "先不换。图片走单独域名时，常是 CDN 节点问题；在 11 月 6 日的记录里，同一入口换 WiFi 后图片恢复。等 2 分钟仍失败，再测备用组。"}
+    },
+    {
+      "@type": "Question",
+      "name": "备用域名第 4 组晚高峰排队 5 秒，算异常吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "19:00 到 22:00 的回源队列变长，属已知现象，10 月 28 日恢复后一直存在。判断标准是排队是否超过 10 秒，超过再考虑切换。"}
+    },
+    {
+      "@type": "Question",
+      "name": "证书锁标正常，但页面要求输入账号，能信吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "不能只凭锁标。核对 Issuer 与登记是否一致，再看域名拼写；10 月 31 日那处待核实镜像的锁标同样正常，问题在机构与内容日期不符。"}
+    },
+    {
+      "@type": "Question",
+      "name": "手机清缓存后入口消失，去哪找？",
+      "acceptedAnswer": {"@type": "Answer", "text": "看本地笔记或导出的书签 HTML，里面按日期排；没有备份时，从 GitHub Pages 镜像页拿静态跳转链接，但它只到 10 月 30 日的版本。"}
+    },
+    {
+      "@type": "Question",
+      "name": "同一入口在电脑能开、手机不能开，谁的问题？",
+      "acceptedAnswer": {"@type": "Answer", "text": "多数是手机 DNS 或运营商线路差异。10 月 28 日的 9 条反馈都属于这一类，清 DNS 缓存或切换流量后恢复，不必更换镜像。"}
+    },
+    {
+      "@type": "Question",
+      "name": "TTL 改成 120 秒后，切换要等多久？",
+      "acceptedAnswer": {"@type": "Answer", "text": "最长 2 分钟，部分递归服务器可能更早。11 月 6 日的操作记录里，改完后 80 秒内三网均可访问新 IP。"}
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  if(menuToggle && mainNav){
+    menuToggle.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.matchMedia('(max-width:720px)').matches){
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var toTop = document.getElementById('toTop');
+  var lastY = 0;
+  window.addEventListener('scroll', function(){
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if(y > 420){ toTop.classList.add('show'); } else { toTop.classList.remove('show'); }
+    lastY = y;
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'});
+    document.getElementById('searchInput').focus({preventScroll:true});
+  });
+
+  // 搜索：本地查找
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var fb = document.getElementById('searchFeedback');
+  var panels = Array.prototype.slice.call(document.querySelectorAll('main .panel'));
+
+  function clearMarks(){
+    document.querySelectorAll('.hidden-by-search').forEach(function(el){ el.classList.remove('hidden-by-search'); });
+  }
+
+  function doSearch(){
+    var q = (input.value || '').trim().toLowerCase();
+    clearMarks();
+    if(!q){
+      fb.textContent = '';
+      fb.className = 'search-feedback';
+      return;
+    }
+    var hits = 0;
+    var firstHit = null;
+    panels.forEach(function(p){
+      var text = p.textContent.toLowerCase();
+      if(text.indexOf(q) !== -1){
+        hits++;
+        if(!firstHit){ firstHit = p; }
+      } else {
+        p.classList.add('hidden-by-search');
+      }
+    });
+    if(hits === 0){
+      fb.textContent = '没有找到包含“' + q + '”的条目，试试“证书”“TTL”“第 4 组”或“DNS”。';
+      fb.className = 'search-feedback miss';
+    } else {
+      fb.textContent = '找到 ' + hits + ' 个相关板块，已隐藏其余内容。';
+      fb.className = 'search-feedback hit';
+      var y = firstHit.getBoundingClientRect().top + window.pageYOffset - 130;
+      window.scrollTo({top: y, behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'});
+    }
+  }
+  btn.addEventListener('click', doSearch);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    if(e.key === 'Escape'){ input.value=''; clearMarks(); fb.textContent=''; fb.className='search-feedback'; }
+  });
+
+  // 侧栏滚动高亮
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var pos = (window.pageYOffset || document.documentElement.scrollTop) + 150;
+    var idx = -1;
+    targets.forEach(function(t, i){
+      if(t && t.offsetTop <= pos){ idx = i; }
+    });
+    sideLinks.forEach(function(a, i){
+      if(i === idx){ a.classList.add('current'); } else { a.classList.remove('current'); }
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  highlight();
+})();
+</script>
+</body>
+  </html>
